@@ -1,0 +1,9 @@
+name: 'Raja Quraish'
+super: true
+id: 24abd6f3-a8e4-47ea-ba63-dd85fbc2bf04
+password_hash: $2y$12$25mLPGpzfxTjiu2NtmzS2ut8GTlT2ICaNMX4qMUqVd.qXAYzQg9/e
+preferences:
+  collections:
+    pages:
+      view: tree
+  color_mode: light
