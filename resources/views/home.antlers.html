@@ -7,26 +7,36 @@
     <style>
         body {
             margin: 0;
-            font-family: system-ui, sans-serif;
-            background: #f5f1e8;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #ffffff;
             color: #222;
         }
 
         /* NAVIGATION */
         header {
-            position: absolute;
+            position: fixed; /* 🔥 STICKY HEADER */
             top: 0;
             width: 100%;
             padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 10;
+            z-index: 1000;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(6px);
+        }
+
+        .logo {
+            color: white;
+            font-weight: 700;
+            font-size: 22px;
+            letter-spacing: 1px;
         }
 
         nav {
             display: flex;
             gap: 25px;
+            align-items: center;
         }
 
         nav a {
@@ -36,23 +46,81 @@
             font-size: 16px;
         }
 
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item > a {
+            display: inline-block;
+        }
+
+        .nav-item.has-dropdown:hover .dropdown {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 28px;
+            right: 0;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            padding: 10px 0;
+            min-width: 240px;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(8px);
+            transition: all 0.18s ease-out;
+            z-index: 20;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 8px 16px;
+            color: #222;
+            font-size: 14px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .dropdown a:hover {
+            background: #f3f2ee;
+        }
+
         /* HERO SECTION */
         .hero {
             position: relative;
             width: 100%;
-            height: 420px;
+            height: 520px;
             background-size: cover;
             background-position: center;
-            background-image: url('/assets/epilespy.jpg');
+            background-image: url('/assets/epilespy.jpg'); /* 🔥 KEEPING YOUR HERO IMAGE */
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            margin-top: 80px; /* 🔥 Needed because header is now sticky */
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: inherit;
+            background-size: cover;
+            background-position: center;
+            transform: scale(1);
+            animation: hero-zoom 18s ease-in-out infinite alternate;
+            z-index: -2;
         }
 
         .hero-overlay {
             background: rgba(0,0,0,0.45);
             position: absolute;
             inset: 0;
+            z-index: -1;
         }
 
         .hero-content {
@@ -75,11 +143,20 @@
             margin-top: 5px;
         }
 
-        /* SECTIONS */
-        section {
+        @keyframes hero-zoom {
+            0%   { transform: scale(1); }
+            100% { transform: scale(1.08); }
+        }
+
+        /* GENERAL SECTION STYLING */
+        main {
             max-width: 1100px;
-            margin: 60px auto;
-            padding: 0 20px;
+            margin: 40px auto 0;
+            padding: 0 20px 80px;
+        }
+
+        section {
+            margin: 60px 0;
         }
 
         h2 {
@@ -87,41 +164,126 @@
             margin-bottom: 15px;
         }
 
-        /* PAST EVENTS — HORIZONTAL BOXES */
-        .events-row {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            margin-top: 25px;
-            flex-wrap: wrap;
+        /* MISSION */
+        #mission h2 {
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
-        .event-box {
-            flex: 1;
-            min-width: 220px;
-            background: white;
-            padding: 25px;
+        #mission p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        #mission .mission-lead {
+            font-weight: 600;
+        }
+
+        /* EVENTS SECTION */
+        #events {
+            padding-top: 20px;
+        }
+
+        .events-heading {
+            font-size: 26px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .events-subtext {
+            text-align: left;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .future-events-box {
             border-radius: 8px;
-            text-align: center;
-            border: 1px solid #ddd;
+            border: 1px dashed #ccc;
+            padding: 18px 20px;
+            text-align: left;
+            background: #faf9f6;
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 50px;
+        }
+
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 22px;
+        }
+
+        .event-card {
+            background: #ffffff;
+            border-radius: 10px;
+            border: 1px solid #e0ded8;
+            overflow: hidden;
             text-decoration: none;
             color: #222;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
+        }
+
+        .event-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .event-thumb {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            background: #ddd;
+        }
+
+        .event-body {
+            padding: 16px 18px 18px;
+        }
+
+        .event-year {
             font-size: 18px;
-            font-weight: 600;
-            transition: 0.2s;
+            font-weight: 700;
+            margin-bottom: 4px;
         }
 
-        .event-box:hover {
-            background: #ece7dd;
-            transform: translateY(-3px);
+        .event-location {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 6px;
         }
 
+        .event-meta {
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* FOOTER */
         footer {
-            margin-top: 80px;
             padding: 40px;
             background: #222;
             color: white;
             text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 16px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+            }
+
+            main {
+                padding: 0 16px 60px;
+            }
         }
     </style>
 </head>
@@ -129,12 +291,41 @@
 <body>
 
 <header>
-    <div class="logo" style="color:white; font-weight:700; font-size:22px;">ICTALS</div>
+    <div class="logo">ICTALS</div>
+
     <nav>
-        <a href="/">Home</a>
-        <a href="#events">Events</a> <!-- scrolls to events section -->
-        <a href="/organizers">Organizers</a>
-        <a href="/contact">Contact</a>
+        <div class="nav-item">
+            <a href="/">Home</a>
+        </div>
+
+        <!-- 🔥 UPDATED EVENTS DROPDOWN -->
+        <div class="nav-item has-dropdown">
+            <a href="#events">Events ▾</a>
+            <div class="dropdown">
+                <a href="https://2025.ictals.org" target="_blank">ICTALS 2025 — Montréal, Canada</a>
+                <a href="https://2022.ictals.org" target="_blank">ICTALS 2022 — Bern, Switzerland</a>
+                <a href="https://2019.ictals.org" target="_blank">ICTALS 2019 — Exeter, United Kingdom</a>
+                <a href="https://2017.ictals.org" target="_blank">ICTALS 2017 — Minneapolis, United States</a>
+
+                <!-- 🔥 NEW: More Past Events -->
+                <a href="/archive">More Past Events →</a>
+            </div>
+        </div>
+
+        <div class="nav-item">
+            <a href="/organizers">Organizers</a>
+        </div>
+
+        <div class="nav-item">
+            <a href="/contact">Contact</a>
+        </div>
+
+        <!-- 🔥 NEW: Alliance for Epilepsy Research -->
+        <div class="nav-item">
+            <a href="https://allianceforepilepsyresearch.org" target="_blank">
+                Alliance for Epilepsy Research
+            </a>
+        </div>
     </nav>
 </header>
 
@@ -147,28 +338,86 @@
     </div>
 </div>
 
-<section id="mission">
-    <h2>Our Mission</h2>
+<main>
 
-    <p>
-        International Conference for Technology and Analysis of Seizures (ICTALS) is a series of conferences focusing on innovative, multi‑discipline solutions for the understanding, detection, prediction, and treatment of seizures.
-    </p>
+    <section id="mission">
+        <h2>Our Mission</h2>
 
-    <p>
-        The conference brings together researchers, clinicians, engineers, and industry professionals to share knowledge, present new ideas, and collaborate on advancing technologies and approaches in seizure analysis and care. ICTALS aims to support progress in research and practical solutions that can improve diagnosis, monitoring, and treatment outcomes.
-    </p>
-</section>
+        <p class="mission-lead">
+            International Conference for Technology and Analysis of Seizures (ICTALS) is a series of conferences
+            dedicated to advancing innovative, multidisciplinary approaches for understanding, detecting, predicting,
+            and treating seizures.
+        </p>
 
-<section id="events">
-    <h2>Past Events</h2>
+        <p>
+            ICTALS brings together researchers, clinicians, engineers, and industry partners to share knowledge,
+            present new ideas, and collaborate on technologies that support seizure analysis and care. The conference
+            aims to bridge fundamental research and clinical practice, helping to improve diagnosis, monitoring,
+            and treatment outcomes for people living with epilepsy and related conditions.
+        </p>
+    </section>
 
-    <div class="events-row">
-        <a class="event-box" href="https://2025.ictals.org" target="_blank">ICTALS 2025<br>Montréal, Canada</a>
-        <a class="event-box" href="https://2023.ictals.org" target="_blank">ICTALS 2023<br>Location</a>
-        <a class="event-box" href="https://2021.ictals.org" target="_blank">ICTALS 2021<br>Location</a>
-        <a class="event-box" href="https://2019.ictals.org" target="_blank">ICTALS 2019<br>Location</a>
-    </div>
-</section>
+    <section id="events">
+
+        <!-- FUTURE EVENTS -->
+        <h2 class="events-heading">Future Events</h2>
+        <div class="events-subtext">Upcoming ICTALS conferences and related meetings.</div>
+
+        <div class="future-events-box">
+            No upcoming events have been announced yet.
+        </div>
+
+        <!-- PAST EVENTS -->
+        <h2 class="events-heading">Past Events</h2>
+        <div class="events-subtext">Explore previous ICTALS conferences.</div>
+
+        <div class="event-grid">
+
+            <!-- ICTALS 2025 -->
+            <a class="event-card" href="https://2025.ictals.org" target="_blank">
+                <img class="event-thumb" src="/assets/ICTALS.2025.png" alt="ICTALS 2025 thumbnail">
+                <div class="event-body">
+                    <div class="event-year">ICTALS 2025</div>
+                    <div class="event-location">Montréal, Canada</div>
+                    <div class="event-meta">International Conference for Technology and Analysis of Seizures</div>
+                </div>
+            </a>
+
+            <!-- ICTALS 2022 -->
+            <a class="event-card" href="https://2022.ictals.org" target="_blank">
+                <img class="event-thumb" src="/assets/ICTALS.2022.png" alt="ICTALS 2022 thumbnail">
+                <div class="event-body">
+                    <div class="event-year">ICTALS 2022</div>
+                    <div class="event-location">Bern, Switzerland</div>
+                    <div class="event-meta">Focused on advances in seizure detection and analysis.</div>
+                </div>
+            </a>
+
+            <!-- ICTALS 2019 -->
+            <a class="event-card" href="https://2019.ictals.org" target="_blank">
+                <img class="event-thumb" src="/assets/ICTALS.2019.png" alt="ICTALS 2019 thumbnail">
+                <div class="event-body">
+                    <div class="event-year">ICTALS 2019</div>
+                    <div class="event-location">Exeter, United Kingdom</div>
+                    <div class="event-meta">Bringing together clinical and technical perspectives.</div>
+                </div>
+            </a>
+
+            <!-- ICTALS 2017 -->
+            <a class="event-card" href="https://2017.ictals.org" target="_blank">
+                <img class="event-thumb" src="/assets/ICTALS.2017.png" alt="ICTALS 2017 thumbnail">
+                <div class="event-body">
+                    <div class="event-year">ICTALS 2017</div>
+                    <div class="event-location">Minneapolis, United States</div>
+                    <div class="event-meta">Exploring emerging methods in seizure prediction.</div>
+                </div>
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
 
 <footer>
     © 2025 ICTALS — All Rights Reserved
