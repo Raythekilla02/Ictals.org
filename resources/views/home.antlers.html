@@ -437,7 +437,7 @@
         For more information or inquiries, please contact us at 
         <strong>123.net@net.com</strong>.
     </p>
-@if(session('success'))
+{{ if success }}
     <div style="
         background: #e8ffe8;
         padding: 12px;
@@ -446,9 +446,10 @@
         color: #0a7a0a;
         text-align: center;
     ">
-        {{ session('success') }}
+        {{ success }}
     </div>
-@endif
+{{ /if }}
+
     <form method="POST" action="/send-message" style="
         display: flex;
         flex-direction: column;
