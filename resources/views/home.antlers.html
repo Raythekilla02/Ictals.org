@@ -129,6 +129,7 @@
             color: white;
             max-width: 900px;
             padding: 20px;
+            animation: fade-up 1.2s ease-out;
         }
 
         .hero-content h1 {
@@ -147,6 +148,17 @@
             0%   { transform: scale(1); }
             100% { transform: scale(1.12); }
         }
+        @keyframes fade-up {
+             0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+             100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
         /* GENERAL SECTION STYLING */
         main {
@@ -357,10 +369,6 @@
         </p>
     </section>
 
-    <!-- 🔥 NEW CONTACT LINE -->
-    <div style="margin-top: 20px; font-size: 16px; color: #444;">
-        For more information or inquiries, please contact us at 
-        <strong>123.net@net.com</strong>.
     </div>
 
     <section id="events">
@@ -422,7 +430,7 @@
         </div>
 
     </section>
-<section id="contact" style="margin-top: 80px;">
+<section id="contact" style="margin-top: 80px; text-align: center;">
     <h2>Contact Us</h2>
 
     <p style="font-size: 16px; color: #444; margin-bottom: 20px;">
@@ -430,21 +438,28 @@
         <strong>123.net@net.com</strong>.
     </p>
 
-    <form style="display: flex; flex-direction: column; gap: 18px; max-width: 600px;">
+    <form style="
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 420px;     /* 🔥 keeps it small */
+        margin: 0 auto;       /* 🔥 centers the form */
+        text-align: left;     /* keeps labels aligned */
+    ">
         <input type="text" placeholder="Your Name" required
-               style="padding: 14px; border: 1px solid #ccc; border-radius: 6px;">
+               style="padding: 12px; border: 1px solid #ccc; border-radius: 6px;">
 
         <input type="text" placeholder="Phone Number" required
-               style="padding: 14px; border: 1px solid #ccc; border-radius: 6px;">
+               style="padding: 12px; border: 1px solid #ccc; border-radius: 6px;">
 
         <input type="email" placeholder="Email Address" required
-               style="padding: 14px; border: 1px solid #ccc; border-radius: 6px;">
+               style="padding: 12px; border: 1px solid #ccc; border-radius: 6px;">
 
         <textarea placeholder="Your Message" required
-                  style="padding: 14px; border: 1px solid #ccc; border-radius: 6px; height: 140px;"></textarea>
+                  style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; height: 120px;"></textarea>
 
         <button type="submit"
-                style="padding: 14px; background: #005bbb; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer;">
+                style="padding: 12px; background: #005bbb; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer;">
             Send Message
         </button>
     </form>
