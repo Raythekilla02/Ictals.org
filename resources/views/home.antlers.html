@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ICTALS — International Conference for Technology and Analysis of Seizures</title>
+    <title>ICTALS — International Conference for Technology and AnaLysis of Seizures</title>
 
+ <!-- Swiper CSS (ADD THIS HERE) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         body {
             margin: 0;
@@ -388,10 +390,13 @@
         <!-- PAST EVENTS -->
         <h2 class="events-heading">Past Events</h2>
         <div class="events-subtext">Explore previous ICTALS conferences.</div>
+<!-- 🔥 ICTALS Carousel -->
+<div class="swiper mySwiper" style="margin-bottom: 40px;">
 
-        <div class="event-grid">
+    <div class="swiper-wrapper">
 
-            <!-- ICTALS 2025 -->
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
             <a class="event-card" href="https://2025.ictals.org" target="_blank">
                 <img class="event-thumb" src="/assets/ICTALS.2025.png" alt="ICTALS 2025 thumbnail">
                 <div class="event-body">
@@ -400,8 +405,10 @@
                     <div class="event-meta">International Conference for Technology and Analysis of Seizures</div>
                 </div>
             </a>
+        </div>
 
-            <!-- ICTALS 2022 -->
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
             <a class="event-card" href="https://2022.ictals.org" target="_blank">
                 <img class="event-thumb" src="/assets/ICTALS.2022.png" alt="ICTALS 2022 thumbnail">
                 <div class="event-body">
@@ -410,8 +417,10 @@
                     <div class="event-meta">Focused on advances in seizure detection and analysis.</div>
                 </div>
             </a>
+        </div>
 
-            <!-- ICTALS 2019 -->
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
             <a class="event-card" href="https://2019.ictals.org" target="_blank">
                 <img class="event-thumb" src="/assets/ICTALS.2019.png" alt="ICTALS 2019 thumbnail">
                 <div class="event-body">
@@ -420,8 +429,10 @@
                     <div class="event-meta">Bringing together clinical and technical perspectives.</div>
                 </div>
             </a>
+        </div>
 
-            <!-- ICTALS 2017 -->
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
             <a class="event-card" href="https://2017.ictals.org" target="_blank">
                 <img class="event-thumb" src="/assets/ICTALS.2017.png" alt="ICTALS 2017 thumbnail">
                 <div class="event-body">
@@ -430,8 +441,15 @@
                     <div class="event-meta">Exploring emerging methods in seizure prediction.</div>
                 </div>
             </a>
-
         </div>
+
+    </div>
+
+    <!-- Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+  </div>
 
     </section>
 <section id="contact" style="margin-top: 80px; text-align: center;">
@@ -457,6 +475,19 @@
 <footer>
     © 2025 ICTALS — All Rights Reserved
 </footer>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+<script>
+    const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
 </body>
 </html>
