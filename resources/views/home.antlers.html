@@ -299,6 +299,105 @@
                 padding: 0 16px 60px;
             }
         }
+    /* FEATURED EVENT SLIDE */
+.event-feature {
+    display: flex;
+    gap: 30px;
+    background: #ffffff;
+    border: 1px solid #e0ded8;
+    border-radius: 12px;
+    padding: 24px;
+    align-items: flex-start;
+}
+
+/* LEFT SIDE */
+.event-feature-left {
+    width: 50%;
+}
+
+.event-feature-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* RIGHT SIDE */
+.event-feature-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-feature-year {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.event-feature-location {
+    margin: 6px 0 16px;
+    font-size: 16px;
+    color: #444;
+}
+
+.event-feature-recap {
+    background: #fafafa;
+    border-left: 3px solid #005bbb;
+    padding: 16px 20px;
+    border-radius: 8px;
+}
+
+.event-feature-recap h3 {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.event-feature-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 14px;
+    background: #005bbb;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.event-feature-btn:hover {
+    background: #004999;
+}
+
+/* SWIPER ARROWS */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #005bbb;
+    font-weight: bold;
+}
+
+/* SWIPER CONTAINER */
+.mySwiper {
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .event-feature {
+        flex-direction: column;
+    }
+
+    .event-feature-left,
+    .event-feature-right {
+        width: 100%;
+    }
+
+    .event-feature-img {
+        height: 200px;
+    }
+}
+
     </style>
 </head>
 
@@ -358,7 +457,7 @@
     <h2>Our Mission</h2>
 
     <p class="mission-lead">
-        International Conference for Technology and Analysis of Seizures (ICTALS) is a series of conferences
+        International Conference for Technology and AnaLysis of Seizures (ICTALS) is a series of conferences
         dedicated to advancing innovative, multidisciplinary approaches for understanding, detecting, predicting,
         and treating seizures.
     </p>
