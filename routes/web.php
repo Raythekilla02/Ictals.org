@@ -1,14 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-Route::view('/archive', 'archive');
-
-// Route::statamic('example', 'example-view', [
-//    'title' => 'Example'
-// ]);
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 
+// Statamic routes
+Route::statamic('/', 'home', []);
+Route::statamic('/events', 'events', []);
+Route::statamic('/archive', 'archive', []);
+
+// Contact form route
 Route::post('/send-message', function (Request $request) {
     $data = $request->validate([
         'name' => 'required',
@@ -17,7 +18,6 @@ Route::post('/send-message', function (Request $request) {
         'message' => 'required',
     ]);
 
-    // Send email to YOU
     Mail::raw(
         "New message from ICTALS website:\n\n" .
         "Name: {$data['name']}\n" .
