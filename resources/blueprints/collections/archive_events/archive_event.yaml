@@ -1,0 +1,62 @@
+title: 'Archive Event'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: year
+            field:
+              type: text
+              display: Year
+          -
+            handle: location
+            field:
+              type: text
+              display: Location
+          -
+            handle: event_url
+            field:
+              type: text
+              display: 'Event URL'
+          -
+            handle: ownership_type
+            field:
+              options:
+                -
+                  key: AER-Owned
+                  value: null
+                -
+                  key: 'Not AER-Owned'
+                  value: null
+              type: select
+              display: 'Ownership Type'
+          -
+            handle: disclaimer
+            field:
+              type: toggle
+              display: Disclaimer
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

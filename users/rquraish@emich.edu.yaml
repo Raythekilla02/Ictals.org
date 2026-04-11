@@ -6,4 +6,8 @@ preferences:
   collections:
     pages:
       view: tree
+    events:
+      view: list
+    archive_events:
+      view: list
   color_mode: light
