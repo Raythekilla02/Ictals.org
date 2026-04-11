@@ -8,6 +8,17 @@
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
     </head>
     <body class="bg-zinc-100 dark:bg-zinc-900 font-sans leading-normal text-zinc-800 dark:text-zinc-400">
+        <nav class="w-full py-4 bg-white shadow mb-6">
+    <ul class="flex justify-center gap-8 text-lg font-medium">
+        {{ nav:main_nav }}
+            <li>
+                <a href="{{ url }}" class="hover:text-blue-600 transition">
+                    {{ title }}
+                </a>
+            </li>
+        {{ /nav:main_nav }}
+    </ul>
+</nav>
         <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
             {{ template_content }}
         </div>

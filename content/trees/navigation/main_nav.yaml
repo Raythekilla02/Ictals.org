@@ -1,1 +1,13 @@
-{  }
+tree:
+  -
+    id: c5871257-3bb2-4976-a6a1-a9b85dcb6ace
+    title: Home
+    url: /
+  -
+    id: 5b177b02-a302-4ccf-b27b-6c3c9247859e
+    title: Events
+    url: /events
+  -
+    id: 4bd1131c-0c11-4d69-984b-a56094ca313e
+    title: Archive
+    url: /archive
