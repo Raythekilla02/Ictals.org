@@ -30,6 +30,7 @@
             color: white;
             font-weight: 700;
             font-size: 22px;
+            letter-spacing: 1px;
         }
 
         nav {
@@ -45,7 +46,7 @@
             font-size: 16px;
         }
 
-        /* HERO */
+        /* HERO SECTION */
         .hero {
             position: relative;
             width: 100%;
@@ -56,13 +57,27 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
             margin-top: 80px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: inherit;
+            background-size: cover;
+            background-position: center;
+            transform: scale(1);
+            animation: hero-zoom 18s ease-in-out infinite alternate;
+            z-index: -2;
         }
 
         .hero-overlay {
             background: rgba(0,0,0,0.45);
             position: absolute;
             inset: 0;
+            z-index: -1;
         }
 
         .hero-content {
@@ -76,16 +91,81 @@
         .hero-content h1 {
             font-size: 56px;
             font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
         }
 
-        /* MAIN */
+        .hero-content p {
+            font-size: 22px;
+            margin-top: 5px;
+        }
+
+        @keyframes hero-zoom {
+            0%   { transform: scale(1); }
+            100% { transform: scale(1.12); }
+        }
+
+        /* GENERAL SECTION STYLING */
         main {
             max-width: 1100px;
             margin: 40px auto 0;
             padding: 0 20px 80px;
         }
 
-        /* EVENT GRID */
+        section {
+            margin: 60px 0;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        /* MISSION */
+        #mission h2 {
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        #mission p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        #mission .mission-lead {
+            font-weight: 600;
+        }
+
+        /* EVENTS SECTION */
+        #events {
+            padding-top: 20px;
+        }
+
+        .events-heading {
+            font-size: 26px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .events-subtext {
+            text-align: left;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .future-events-box {
+            border-radius: 8px;
+            border: 1px dashed #ccc;
+            padding: 18px 20px;
+            text-align: left;
+            background: #faf9f6;
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 50px;
+        }
+
         .event-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -113,20 +193,23 @@
             width: 100%;
             height: 140px;
             object-fit: cover;
+            background: #ddd;
         }
 
         .event-body {
-            padding: 16px 18px;
+            padding: 16px 18px 18px;
         }
 
         .event-year {
             font-size: 18px;
             font-weight: 700;
+            margin-bottom: 4px;
         }
 
-        /* TOGGLE LIST */
-        #all-events {
-            margin-top: 20px;
+        .event-location {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 6px;
         }
 
         .event-link {
@@ -145,11 +228,30 @@
             font-size: 15px;
         }
 
+        /* FOOTER */
         footer {
             padding: 40px;
             background: #222;
             color: white;
             text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 16px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+            }
+
+            main {
+                padding: 0 16px 60px;
+            }
         }
     </style>
 </head>
@@ -160,9 +262,17 @@
     <div class="logo">ICTALS</div>
 
     <nav>
-        <a href="/">Home</a>
-        <a href="#contact">Contact</a>
-        <a href="http://www.epilepsyresearch.org/" target="_blank">AER</a>
+        <div class="nav-item">
+            <a href="/">Home</a>
+        </div>
+        <div class="nav-item">
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-item">
+            <a href="http://www.epilepsyresearch.org/" target="_blank">
+                Alliance for Epilepsy Research
+            </a>
+        </div>
     </nav>
 </header>
 
@@ -178,97 +288,117 @@
 
 <section id="mission">
     <h2>Our Mission</h2>
+
     <p class="mission-lead">
         International Conference for Technology and AnaLysis of Seizures (ICTALS) is a series of conferences
         dedicated to advancing innovative, multidisciplinary approaches for understanding, detecting, predicting,
         and treating seizures.
     </p>
+
+    <p>
+        ICTALS brings together researchers, clinicians, engineers, and industry partners to share knowledge,
+        present new ideas, and collaborate on technologies that support seizure analysis and care. The conference
+        aims to bridge fundamental research and clinical practice, helping to improve diagnosis, monitoring,
+        and treatment outcomes for people living with epilepsy and related conditions.
+    </p>
+
+    <p style="margin-top: 1rem;">
+        This series of conferences is facilitated by the Alliance for Epilepsy Research.
+    </p>
 </section>
 
-<!-- ===================== -->
-<!-- FUTURE EVENT SECTION -->
-<!-- ===================== -->
-<section>
-    <h2>Future Event</h2>
+<section id="events">
 
-    <div class="event-card" style="max-width: 500px;">
-        <img src="/assets/ICTAL 2025-Banner.png" class="event-thumb">
-        <div class="event-body">
-            <div class="event-year">ICTALS 2027</div>
-            <p>Newcastle, United Kingdom</p>
-            <a href="https://2027.ictals.org" target="_blank">Visit Event Website →</a>
-        </div>
+    <!-- FUTURE EVENTS -->
+    <h2 class="events-heading">Future Events</h2>
+    <div class="events-subtext">Upcoming ICTALS conferences and related meetings.</div>
+
+    <div class="future-events-box">
+        Next event will be held in Newcastle, UK, in 2027!
     </div>
-</section>
 
-<!-- ===================== -->
-<!-- LATEST 4 PAST EVENTS -->
-<!-- ===================== -->
-<section>
-    <h2>Past Events</h2>
+    <!-- PAST EVENTS -->
+    <h2 class="events-heading">Past Events</h2>
+    <div class="events-subtext">Explore previous ICTALS conferences.</div>
 
+    <!-- 4 ICTALS BOXES -->
     <div class="event-grid">
 
         <!-- ICTALS 2025 -->
         <a class="event-card" href="https://2025.ictals.org" target="_blank">
-            <img src="/assets/ICTAL 2025-Banner.png" class="event-thumb">
+            <img src="/assets/ICTAL 2025-Banner.png" class="event-thumb" alt="ICTALS 2025 banner">
             <div class="event-body">
                 <div class="event-year">ICTALS 2025</div>
-                <p>Montréal, Canada</p>
+                <div class="event-location">Montréal, Canada</div>
             </div>
         </a>
 
         <!-- ICTALS 2022 -->
         <a class="event-card" href="https://2022.ictals.org" target="_blank">
-            <img src="/assets/ICTAL 2022-Banner.png" class="event-thumb">
+            <img src="/assets/ICTAL 2022-Banner.png" class="event-thumb" alt="ICTALS 2022 banner">
             <div class="event-body">
                 <div class="event-year">ICTALS 2022</div>
-                <p>Bern, Switzerland</p>
+                <div class="event-location">Bern, Switzerland</div>
             </div>
         </a>
 
         <!-- ICTALS 2019 -->
         <a class="event-card" href="https://www.exeter.ac.uk/events/details/index.php?event=9454" target="_blank">
-            <img src="/assets/ICTAL 2019-Banner.png" class="event-thumb">
+            <img src="/assets/ICTAL 2019-Banner.png" class="event-thumb" alt="ICTALS 2019 banner">
             <div class="event-body">
                 <div class="event-year">ICTALS 2019</div>
-                <p>Exeter, United Kingdom</p>
+                <div class="event-location">Exeter, United Kingdom</div>
             </div>
         </a>
 
         <!-- ICTALS 2017 -->
         <a class="event-card" href="https://iwsp8.umn.edu/" target="_blank">
-            <img src="/assets/ICTAL 2017-Banner.png" class="event-thumb">
+            <img src="/assets/ICTAL 2017-Banner.png" class="event-thumb" alt="ICTALS 2017 banner">
             <div class="event-body">
                 <div class="event-year">ICTALS 2017</div>
-                <p>Minneapolis, United States</p>
+                <div class="event-location">Minneapolis, United States</div>
             </div>
         </a>
 
     </div>
 
-    <!-- TOGGLE BUTTON -->
-    <button id="toggle-all" class="toggle-btn">Show All Past Events ↓</button>
+    <!-- MORE PAST EVENTS TOGGLE -->
+    <button id="toggle-all" class="toggle-btn">More Past Events ↓</button>
 
-    <!-- FULL LIST -->
-    <div id="all-events" style="display:none;">
+    <div id="all-events" style="display:none; margin-top: 20px;">
 
+        <!-- AER-owned legacy events (to be preserved locally later) -->
         <div class="event-link"><strong>IWSP 7 — 2015</strong> — <a href="https://iwsp7.org/" target="_blank">View Archive</a></div>
         <div class="event-link"><strong>IWSP 6 — 2013</strong> — <a href="http://iwsp6.org/" target="_blank">View Archive</a></div>
         <div class="event-link"><strong>IWSP 5 — 2011</strong> — <a href="https://www.iee.et.tu-dresden.de/iwsp5/2011/06/03/international-workshop-on-seizure-prediction-iwsp/" target="_blank">View Archive</a></div>
         <div class="event-link"><strong>IWSP 4 — 2009</strong> — <a href="https://iwsp4.org/photos.htm" target="_blank">View Archive</a></div>
         <div class="event-link"><strong>Sanibel Symposium</strong> — <a href="https://sanibelsymposium.org" target="_blank">View Archive</a></div>
 
+        <!-- Historical IWSP (not AER-owned) -->
         <div class="event-link"><strong>IWSP 3 — 2007</strong> — <a href="https://web.archive.org/web/20070801144837/https://epilepsy.uni-freiburg.de/seizure-prediction-workshop-2007" target="_blank">View Archive</a></div>
         <div class="event-link"><strong>IWSP 2 — 2006</strong> — <a href="https://web.archive.org/web/20080820015103/http://www.ninds.nih.gov/news_and_events/proceedings/Second_International_Workshop_On_Seizure_Prediction.htm" target="_blank">View Archive</a></div>
         <div class="event-link"><strong>IWSP 1 — 2002</strong> — <a href="http://www.ncbi.nlm.nih.gov/pubmed/15721063" target="_blank">View Archive</a></div>
 
     </div>
+
 </section>
 
 <section id="contact" style="margin-top: 80px; text-align: center;">
     <h2>Contact Us</h2>
-    <p>For inquiries, email <a href="mailto:organizers@ictals.org">organizers@ictals.org</a></p>
+
+    <p style="font-size: 16px; color: #444; margin-bottom: 20px;">
+        For more information or inquiries, please contact us at
+        <a href="mailto:organizers@ictals.org" style="color: #005bbb; text-decoration: underline;">
+            organizers@ictals.org
+        </a>.
+    </p>
+
+    <p style="font-size: 16px; color: #444;">
+        Visit the Alliance for Epilepsy Research at
+        <a href="http://www.epilepsyresearch.org/" target="_blank" style="color: #005bbb; text-decoration: underline;">
+            epilepsyresearch.org
+        </a>.
+    </p>
 </section>
 
 </main>
