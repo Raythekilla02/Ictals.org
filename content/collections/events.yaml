@@ -1,4 +1,5 @@
 title: Events
+handle: events
 icon: collections
 template: events/show
 layout: layout
