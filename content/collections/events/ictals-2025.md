@@ -2,6 +2,7 @@
 id: de365964-5741-40be-a2b7-953f2c56dc09
 blueprint: event
 title: 'ICTALS 2025'
+collection: events
 year: '2025'
 location: 'Montreal, Canada'
 event_url: 'https://2025.ictals.org'
