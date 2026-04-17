@@ -1,8 +1,9 @@
 title: Events
 icon: collections
-template: default
+template: events/show
 layout: layout
 revisions: false
+route: '/events/{slug}'
 sort_dir: asc
 date_behavior:
   past: null
