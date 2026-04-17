@@ -7,8 +7,13 @@
 {{ /banner_image }}
 
     {{ if legacy_url }}
-        <p><a href="{{ legacy_url }}" class="btn">View Archived Site</a></p>
+     <iframe 
+        src="{{ legacy_url }}" 
+        style="width:100%; height:1200px; border:none;"
+        loading="lazy">
+    </iframe>    
     {{ /if }}
+    
 </section>
 
 <section class="event-body">
