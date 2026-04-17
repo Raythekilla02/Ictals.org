@@ -8,6 +8,15 @@ preferences:
       view: tree
     events:
       view: list
+      columns:
+        - title
+        - slug
+        - status
+        - legacy_url
+        - description
+        - banner_image
+        - location
+        - year
     archive_events:
       view: list
   color_mode: light

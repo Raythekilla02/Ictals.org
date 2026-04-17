@@ -1,0 +1,20 @@
+{{ partial:layout }}
+
+<section class="event-hero">
+    <h1>{{ title }}</h1>
+    <p>{{ year }} • {{ location }}</p>
+
+    {{ if banner }}
+        <img src="{{ banner }}" alt="{{ title }} banner">
+    {{ /if }}
+
+    {{ if legacy_url }}
+        <p><a href="{{ legacy_url }}" class="btn">View Archived Site</a></p>
+    {{ /if }}
+</section>
+
+<section class="event-body">
+    {{ description }}
+</section>
+
+{{ /partial:layout }}

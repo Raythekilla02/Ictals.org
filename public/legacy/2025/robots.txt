@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://2025.ictals.org/sitemap.xml
