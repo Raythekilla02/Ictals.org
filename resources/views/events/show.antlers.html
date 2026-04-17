@@ -2,9 +2,9 @@
     <h1>{{ title }}</h1>
     <p>{{ year }} • {{ location }}</p>
 
-    {{ if banner_image }}
-        <img src="{{ banner_image }}" alt="{{ title }} banner">
-    {{ /if }}
+  {{ banner_image }}
+    <img src="{{ url }}" alt="{{ title }} banner" class="w-full max-w-4xl mx-auto">
+{{ /banner_image }}
 
     {{ if legacy_url }}
         <p><a href="{{ legacy_url }}" class="btn">View Archived Site</a></p>
