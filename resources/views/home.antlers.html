@@ -444,11 +444,15 @@ document.getElementById('toggle-all').onclick = () => {
     box.style.display = box.style.display === 'none' ? 'block' : 'none';
 };
 </script>
-<section id="contact" style="margin-top: 80px; text-align: center;">
-    <h2>Contact Us</h2>
-    <p>For inquiries, email <a href="mailto:organizers@ictals.org">organizers@ictals.org</a></p>
-</section>
+<section id="contact" class="py-20 bg-gray-50">
+    <div class="w-full flex flex-col items-center justify-center text-center space-y-6">
 
+        <p class="text-lg text-gray-700">
+            For more information or inquiries, please contact us at
+            <a href="mailto:organizers@ictals.org" class="text-blue-600 hover:text-blue-800 underline">
+                organizers@ictals.org
+            </a>.
+        </p>
 </main>
 
 <footer>
