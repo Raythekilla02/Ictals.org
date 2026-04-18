@@ -34,7 +34,7 @@ tabs:
               type: assets
               display: 'Banner Image'
           -
-            handle: description
+            handle: content
             field:
               type: textarea
               display: Description

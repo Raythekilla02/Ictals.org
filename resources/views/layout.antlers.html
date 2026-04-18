@@ -7,20 +7,26 @@
         <title>{{ title ?? site:name }}</title>
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
     </head>
-<body class="bg-white font-sans leading-normal text-zinc-800">
+
+    <body class="bg-white font-sans leading-normal text-zinc-800">
+
+        {{ unless legacy_url }}
         <nav class="w-full py-4 bg-white shadow mb-6">
-    <ul class="flex justify-center gap-8 text-lg font-medium">
-        {{ nav:main_nav }}
-            <li>
-                <a href="{{ url }}" class="hover:text-blue-600 transition">
-                    {{ title }}
-                </a>
-            </li>
-        {{ /nav:main_nav }}
-    </ul>
-</nav>
+            <ul class="flex justify-center gap-8 text-lg font-medium">
+                {{ nav:main_nav }}
+                    <li>
+                        <a href="{{ url }}" class="hover:text-blue-600 transition">
+                            {{ title }}
+                        </a>
+                    </li>
+                {{ /nav:main_nav }}
+            </ul>
+        </nav>
+        {{ /unless }}
+
         <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
             {{ template_content }}
         </div>
+
     </body>
 </html>
