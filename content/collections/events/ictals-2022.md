@@ -9,5 +9,6 @@ event_url: 'https://2022.ictals.org/'
 banner_image:
   - 'ICTAL 2022-Banner.png'
 updated_by: 24abd6f3-a8e4-47ea-ba63-dd85fbc2bf04
-updated_at: 1776467544
+updated_at: 1776468191
+legacy_url: /events/
 ---
