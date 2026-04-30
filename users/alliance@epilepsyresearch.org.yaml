@@ -1,6 +1,22 @@
-name: 'Alliance'
+name: 'AER'
 super: true
-id: a117f749-b6a5-43cb-8a6e-4df530fa440b
-password_hash: $2y$12$xEcIKpx9pcrd6hPzKayseOSiT29WCWDD8/3iqRYGmRqOv3FsmYPX.
+id: 3ca531cc-31c5-428e-8eeb-a409697581d6
+password_hash: $2y$12$xEcIKpx9pcrd6hPzKayseOSiT29WCWDD8/3iqRYGmRqOv3FsmYPX
 preferences:
+  collections:
+    pages:
+      view: tree
+    events:
+      view: list
+      columns:
+        - title
+        - slug
+        - status
+        - legacy_url
+        - description
+        - banner_image
+        - location
+        - year
+    archive_events:
+      view: list
   color_mode: light
