@@ -1,7 +1,7 @@
 name: 'AER'
 super: true
 id: 3ca531cc-31c5-428e-8eeb-a409697581d6
-password_hash: $2y$12$xEcIKpx9pcrd6hPzKayseOSiT29WCWDD8/3iqRYGmRqOv3FsmYPX
+password_hash: $2y$12$E1LlLDuE6fXHXp4t7qC7fOZHJs0coS8YpN5PDtWFS3HKKZq37KX4e
 preferences:
   collections:
     pages:
