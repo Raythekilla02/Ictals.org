@@ -1,7 +1,0 @@
-title: Events
-route: '/legacy/{slug}'
-template: show
-layout: layout
-revisions: false
-sort_dir: asc
-slugs: true

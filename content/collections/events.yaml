@@ -3,7 +3,7 @@ icon: collections
 template: events/show
 layout: layout
 revisions: false
-route: '/events/{slug}'
+route: '/legacy/{slug}'
 sort_dir: asc
 date_behavior:
   past: null
