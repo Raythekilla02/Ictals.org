@@ -1,7 +1,53 @@
-title: Events
-route: '/legacy/{slug}'
-template: show
-layout: layout
-revisions: false
-sort_dir: asc
-slugs: true
+title: Event
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+          -
+            handle: year
+            field:
+              type: text
+              display: Year
+          -
+            handle: location
+            field:
+              type: text
+              display: Location
+          -
+            handle: event_url
+            field:
+              type: text
+              display: 'Event URL'
+          -
+            handle: banner_image
+            field:
+              type: assets
+              container: assets
+              display: 'Banner Image'
+          -
+            handle: legacy_url
+            field:
+              type: text
+              display: 'Legacy URL'
+          -
+            handle: content
+            field:
+              type: textarea
+              display: Description
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              generate: false
