@@ -1,3 +1,11 @@
+{{ if event_url }}
+    {{ redirect to="{ event_url }" }}
+{{ /if }}
+
+{{ if legacy_url }}
+    {{ redirect to="{ legacy_url }" }}
+{{ /if }}
+
 {{ if legacy_url }}
     <iframe 
         src="{{ legacy_url }}"
