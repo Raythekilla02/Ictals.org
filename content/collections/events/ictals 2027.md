@@ -1,5 +1,4 @@
 ---
-id: ef8a2101-e68d-4720-adf3-d91380481a27
 blueprint: event
 title: 'ICTALS 2027'
 collection: events
