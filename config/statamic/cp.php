@@ -127,5 +127,7 @@ return [
     'thumbnail_presets' => [
         // 'medium' => 800,
     ],
-
+ 'nav' => [
+        'Launch Email' => 'https://mail.zoho.com/zm/#mail/folder/inbox',
+    ],
 ];
