@@ -127,7 +127,18 @@ return [
     'thumbnail_presets' => [
         // 'medium' => 800,
     ],
- 'nav' => [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Custom Navigation Links
+    |--------------------------------------------------------------------------
+    |
+    | Add custom links to the Control Panel navigation.
+    |
+    */
+
+    'nav' => [
         'Launch Email' => 'https://mail.zoho.com/zm/#mail/folder/inbox',
     ],
+
 ];
