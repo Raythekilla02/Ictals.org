@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Statamic\CP\Utilities\Utility;
+use App\Utilities\LaunchEmailUtility;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,8 +21,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-public function boot(): void
-{
-    \Statamic\CP\Utilities\Utility::register(\App\Utilities\LaunchEmailUtility::class);
-}    
+        Utility::register(LaunchEmailUtility::class);
+    }
 }
