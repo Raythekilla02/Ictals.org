@@ -20,4 +20,9 @@ class LaunchEmailUtility extends Utility
     {
         return view('utilities.launch-email');
     }
+
+    public function handle()
+    {
+        return $this->content();
+    }
 }
