@@ -6,6 +6,8 @@ use Statamic\CP\Utilities\Utility;
 
 class LaunchEmailUtility extends Utility
 {
+    protected static $slug = 'launch-email';
+
     public function title()
     {
         return 'Launch Email';
