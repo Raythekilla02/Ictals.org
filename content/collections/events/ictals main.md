@@ -1,8 +1,9 @@
+---
+id: 5334254d-403b-4d2e-be0d-f5661f59d4eb
+blueprint: event
 title: 'ICTALS Main Website'
 collection: events
 slug: ictals-main
-year: ''
-location: ''
 event_url: 'https://ictals.org/'
-banner_image: []
 legacy_url: 'https://ictals.org/'
+---
