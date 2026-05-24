@@ -1,5 +1,5 @@
 {
-  "name": "launchemail/launchemail",
+  "name": "LaunchEmail/LaunchEmail",
   "type": "statamic-addon",
   "autoload": {
     "psr-4": {
