@@ -1,1 +1,6 @@
 title: 'Main Nav'
+tree:
+  - entry: home
+  - entry: events
+  - entry: archive
+  - entry: collections/settings/site-settings
