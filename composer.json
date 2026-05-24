@@ -12,6 +12,11 @@
     
    "repositories": [
     {
+            "name": "launchemail",
+            "type": "path",
+            "url": "addons/LaunchEmail"
+        },
+        {
         "type": "path",
         "url": "./addons/LaunchEmail",
         "options": {
@@ -25,6 +30,7 @@
         "laravel/framework": "^13.0",
         "laravel/tinker": "^3.0",
         "launchemail/launchemail": "*",
+        "launchemail/utility": "*",
         "statamic/cms": "^6.0"
     },
     "require-dev": {

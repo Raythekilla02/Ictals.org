@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32410d32d502893b0dcdcb735de5eec1",
+    "content-hash": "c62ef1e8c261b351c227c2c56d4d32e8",
     "packages": [
         {
             "name": "LaunchEmail/LaunchEmail",
@@ -2116,6 +2116,31 @@
                 "source": "https://github.com/laravel/tinker/tree/v3.0.0"
             },
             "time": "2026-03-17T14:53:17+00:00"
+        },
+        {
+            "name": "launchemail/utility",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "addons/LaunchEmail",
+                "reference": "0e43ca7d3f7476fe2761e81ebab32b45df41a58d"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "statamic": {
+                    "name": "Launch Email Utility",
+                    "description": "Adds a CP utility to open Zoho Mail"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaunchEmail\\": "src/"
+                }
+            },
+            "description": "Launch Zoho Mail from Statamic CP",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "league/commonmark",
