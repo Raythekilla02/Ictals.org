@@ -6,5 +6,5 @@ sections:
       -
         handle: zoho_mail
         field:
-          type: text
+          type: link
           display: Zoho Mail
