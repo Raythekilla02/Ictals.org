@@ -1,0 +1,10 @@
+title: Quick Links
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: zoho_mail
+        field:
+          type: text
+          display: Zoho Mail
