@@ -11,3 +11,7 @@ tree:
     id: 4bd1131c-0c11-4d69-984b-a56094ca313e
     title: Archive
     url: /archive
+  -
+    id: 1b867c41-65e7-4c67-aec4-1f7812d0ab36
+    title: Site Settings
+    entry: collections/settings/site-settings
