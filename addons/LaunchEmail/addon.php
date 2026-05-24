@@ -6,4 +6,5 @@ return [
     'description' => 'Utility to open Zoho Mail',
     'version' => '1.0.0',
     'namespace' => 'LaunchEmail',
+    'provider' => \LaunchEmail\ServiceProvider::class,
 ];
