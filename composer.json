@@ -13,7 +13,7 @@
    "repositories": [
     {
         "type": "path",
-        "url": "./addons/launchemail",
+        "url": "./addons/LaunchEmail",
         "options": {
             "symlink": false
         }
