@@ -14,4 +14,4 @@ tree:
   -
     id: 1b867c41-65e7-4c67-aec4-1f7812d0ab36
     title: Site Settings
-    entry: collections/settings/site-settings
+    entry: /settings/site-settings
