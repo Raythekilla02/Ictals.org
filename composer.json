@@ -13,7 +13,10 @@
     "repositories": [
     {
         "type": "path",
-        "url": "addons/*"
+        "url": "addons/*",
+        "options": {
+            "symlink": false
+        }
     }
     ],
 
