@@ -1,9 +1,9 @@
-{
-  "name": "launchemail/launchemail",
-  "type": "statamic-addon",
-  "autoload": {
-    "psr-4": {
-      "LaunchEmail\\": "src/"
+"repositories": [
+    {
+        "type": "path",
+        "url": "./addons/launchemail",
+        "options": {
+            "symlink": false
+        }
     }
-  }
-}
+],
