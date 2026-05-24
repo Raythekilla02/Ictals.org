@@ -10,10 +10,10 @@
         "laravel"
     ],
     
-    "repositories": [
+   "repositories": [
     {
         "type": "path",
-        "url": "addons/*",
+        "url": "./addons/launchemail",
         "options": {
             "symlink": false
         }
