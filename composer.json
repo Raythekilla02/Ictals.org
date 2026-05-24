@@ -9,6 +9,14 @@
         "flat file",
         "laravel"
     ],
+    
+    "repositories": [
+    {
+        "type": "path",
+        "url": "addons/*"
+    }
+    ],
+
     "require": {
         "php": "^8.3",
         "laravel/framework": "^13.0",
