@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2384b8cc4ef869dbed11216a383026e",
+    "content-hash": "98768eb608a669f197df0cf19bdd6372",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -2097,6 +2097,25 @@
                 "source": "https://github.com/laravel/tinker/tree/v3.0.0"
             },
             "time": "2026-03-17T14:53:17+00:00"
+        },
+        {
+            "name": "launchemail/launchemail",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./addons/launchemail",
+                "reference": "381782458a5358f32aa89e6806e2949ce5ecf2b4"
+            },
+            "type": "statamic-addon",
+            "autoload": {
+                "psr-4": {
+                    "LaunchEmail\\": "src/"
+                }
+            },
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "league/commonmark",
@@ -12092,7 +12111,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,

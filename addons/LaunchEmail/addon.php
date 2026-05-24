@@ -1,5 +1,8 @@
 <?php
 
+use Statamic\Facades\Utility;
+use LaunchEmail\LaunchEmailUtility;
+
 return [
     'name' => 'Launch Email Utility',
     'slug' => 'launch-email',
@@ -8,3 +11,6 @@ return [
     'namespace' => 'LaunchEmail',
     'provider' => \LaunchEmail\ServiceProvider::class,
 ];
+
+// Register the utility
+Utility::register(LaunchEmailUtility::class);
