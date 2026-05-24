@@ -3,8 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Statamic\Facades\Utility;
-use App\Utilities\LaunchEmailUtility;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,8 +13,6 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        Utility::extend(function ($utilities) {
-            $utilities->register(LaunchEmailUtility::class);
-        });
+        //
     }
 }
