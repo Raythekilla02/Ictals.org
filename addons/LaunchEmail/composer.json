@@ -1,9 +1,16 @@
 {
-  "name": "launchemail/launchemail",
+  "name": "launchemail/utility",
+  "description": "Launch Zoho Mail from Statamic CP",
   "type": "statamic-addon",
   "autoload": {
     "psr-4": {
       "LaunchEmail\\": "src/"
+    }
+  },
+  "extra": {
+    "statamic": {
+      "name": "Launch Email Utility",
+      "description": "Adds a CP utility to open Zoho Mail"
     }
   }
 }
