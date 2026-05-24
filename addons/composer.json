@@ -1,0 +1,8 @@
+{
+  "name": "launch-email/utility",
+  "autoload": {
+    "psr-4": {
+      "LaunchEmail\\": "src/"
+    }
+  }
+}
