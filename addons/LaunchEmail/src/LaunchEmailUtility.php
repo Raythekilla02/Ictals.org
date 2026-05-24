@@ -20,7 +20,7 @@ class LaunchEmailUtility extends Utility
 
     public function content()
     {
-        return view('launch-email::launch-email');
+        return view('launchemail::launch-email');
     }
 
     public function handle()

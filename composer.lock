@@ -4,8 +4,27 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "98768eb608a669f197df0cf19bdd6372",
+    "content-hash": "32410d32d502893b0dcdcb735de5eec1",
     "packages": [
+        {
+            "name": "LaunchEmail/LaunchEmail",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./addons/LaunchEmail",
+                "reference": "00dbcda85fb2771153d8b1300f716a950c52b6bc"
+            },
+            "type": "statamic-addon",
+            "autoload": {
+                "psr-4": {
+                    "LaunchEmail\\": "src/"
+                }
+            },
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
         {
             "name": "ajthinking/archetype",
             "version": "v2.0.0",
@@ -2097,25 +2116,6 @@
                 "source": "https://github.com/laravel/tinker/tree/v3.0.0"
             },
             "time": "2026-03-17T14:53:17+00:00"
-        },
-        {
-            "name": "launchemail/launchemail",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./addons/launchemail",
-                "reference": "381782458a5358f32aa89e6806e2949ce5ecf2b4"
-            },
-            "type": "statamic-addon",
-            "autoload": {
-                "psr-4": {
-                    "LaunchEmail\\": "src/"
-                }
-            },
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
         },
         {
             "name": "league/commonmark",
