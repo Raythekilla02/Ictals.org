@@ -2,29 +2,12 @@
 
 namespace LaunchEmail;
 
-use Statamic\CP\Utilities\Utility;
+use Statamic\Utilities\Utility;
 
 class LaunchEmailUtility extends Utility
 {
-    protected static $slug = 'launch-email';
-
-    public function title()
-    {
-        return 'Launch Email';
-    }
-
-    public function icon()
-    {
-        return 'mail';
-    }
-
-    public function content()
-    {
-        return view('launchemail::launch-email');
-    }
-
     public function handle()
     {
-        return $this->content();
+        return view('launch-email');
     }
 }
