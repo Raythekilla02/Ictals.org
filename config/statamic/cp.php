@@ -8,13 +8,8 @@ return [
 
     'start_page' => 'dashboard',
 
-    'stylesheets' => [
-        // public_path('css/cp.css'),
-    ],
-
-    'scripts' => [
-        //
-    ],
+    'stylesheets' => [],
+    'scripts' => [],
 
     'nav' => [
         'Launch Email' => 'https://mail.zoho.com/zm/#mail/folder/inbox',
