@@ -17,7 +17,8 @@ class AppServiceProvider extends ServiceProvider
         Nav::extend(function ($nav) {
             $nav->content('Zoho Mail Login')
                 ->url('https://www.zoho.com/mail/login.html')
-                ->icon('mail');
+                ->icon('mail')
+                ->target('_blank'); // ← THIS OPENS IN A NEW TAB
         });
     }
 }
