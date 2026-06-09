@@ -27,8 +27,7 @@
         <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
             {{ template_content }}
         </div>
-        
-<!-- FLOATING EDIT LINK FOR LOGGED IN USERS/CLIENTS -->
+
         {{ if logged_in }}
             <a href="{{ edit_url }}" style="position: fixed; bottom: 20px; right: 20px; background: #1a1a1a; color: #fff; padding: 12px 16px; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-decoration: none; z-index: 9999; display: flex; align-items: center; gap: 8px; font-family: sans-serif; font-size: 14px;">
                 ✏️ Edit Page
