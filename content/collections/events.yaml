@@ -11,5 +11,5 @@ date_behavior:
 preview_targets:
   -
     label: Entry
-    url: '{site_url}'
+    url: '/'
     refresh: true
