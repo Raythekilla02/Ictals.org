@@ -41,6 +41,12 @@ tabs:
             field:
               type: textarea
               display: Description
+          -
+            handle: is_past_event
+            field:
+              type: toggle
+              display: 'Move to Past Events'
+              
   sidebar:
     display: Sidebar
     sections:
