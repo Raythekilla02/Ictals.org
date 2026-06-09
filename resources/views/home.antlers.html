@@ -279,9 +279,9 @@
 <div class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1><strong>{{ hero_title }}</strong></h1>
-        <p>{{ hero_subtitle }}</p>
-
+        <h1><strong>ICTALS</strong></h1>
+        <p>International Conference for Technology and Analysis of Seizures</p>
+    </div>
 </div>
 
 <main>
@@ -314,19 +314,8 @@
     <div class="events-subtext">Upcoming ICTALS conferences and related meetings.</div>
 
     <div class="future-events-box">
-    {{ current_event_text }}
-</div>
-<div class="event-grid">
-{{ collection:events sort="year:asc" where="year >= now | format('Y')" }}
-    <a class="event-card" href="{{ event_url }}" target="_blank">
-        <img src="{{ banner_image:url }}" class="event-thumb">
-        <div class="event-body">
-            <div class="event-year">{{ title }}</div>
-            <div class="event-location">{{ location }}</div>
-        </div>
-    </a>
-{{ /collection:events }}
-</div>
+        Next event will be held in Newcastle, UK, in 2027!
+    </div>
 
   <!-- PAST EVENTS -->
 <h2 class="events-heading">Past Events</h2>
