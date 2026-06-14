@@ -11,20 +11,34 @@ tabs:
       -
         fields:
           -
+            handle: mission_lead
+            field:
+              type: textarea
+              display: 'Mission Lead Paragraph'
+          -
+            handle: mission_body
+            field:
+              type: textarea
+              display: 'Mission Main Body'
+          -
             handle: future_event_title
             field:
               type: text
               display: 'Future Event Title / Year'
-              instructions: 'Example: ICTALS 2027'
           -
             handle: future_event_location
             field:
               type: text
               display: 'Future Event Location'
-              instructions: 'Example: Newcastle, United Kingdom'
           -
             handle: future_event_url
             field:
               type: text
               display: 'Future Event URL'
-              instructions: 'Example: https://conferences.ncl.ac.uk/ictals2027/'
+          -
+            handle: is_past_event
+            field:
+              type: toggle
+              display: 'Move to Past Events?'
+              instructions: 'Turn this on to automatically move this event down next to 2025.'
+              default: false
