@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths-ignore:
       - '.github/screenshot.png'
+  schedule:
+    - cron: '0 6 * * 1'  # Every Monday at 6am UTC
 
 jobs:
   screenshot:
