@@ -1,5 +1,7 @@
 # ICTALS.org
 
+![ICTALS Homepage](.github/screenshot.png)
+
 Website for the **International Conference for Technology and Analysis of Seizures (ICTALS)** — a recurring academic conference series on seizure prediction and epilepsy research, facilitated by the [Alliance for Epilepsy Research](http://www.epilepsyresearch.org/).
 
 Built with [Statamic](https://statamic.com) (flat-file CMS on Laravel) and deployed at [ictals.org](https://ictals.org).
