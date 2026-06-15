@@ -6,7 +6,7 @@ on:
     paths-ignore:
       - '.github/screenshot.png'
   schedule:
-    - cron: '0 6 * * *'  # Every day at 6am UTC
+    - cron: '0 0 * * *'  # Every day at midnight UTC
 
 jobs:
   screenshot:
