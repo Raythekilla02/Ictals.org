@@ -1,0 +1,22 @@
+title: Main Website
+tabs:
+  main:
+    display: Main
+    sections:
+      - fields:
+          - handle: mission_lead
+            field:
+              type: textarea
+              display: "Mission — Opening Line"
+          - handle: mission_body
+            field:
+              type: textarea
+              display: "Mission — Main Paragraph"
+          - handle: mission_footer
+            field:
+              type: textarea
+              display: "Mission — Closing Line"
+          - handle: next_event_blurb
+            field:
+              type: text
+              display: "Future Events Banner Text"

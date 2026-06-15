@@ -1,4 +1,7 @@
 title: Events
+blueprints:
+  - event
+  - main_website
 icon: collections
 template: events/show
 layout: layout
