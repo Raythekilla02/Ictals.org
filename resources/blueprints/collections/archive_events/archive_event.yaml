@@ -1,62 +1,28 @@
-title: 'Archive Event'
+title: Archive Event
 tabs:
   main:
-    display: Main
+    display: Archive Event Details
     sections:
-      -
+      - display: "Basic Info"
         fields:
-          -
-            handle: title
+          - handle: title
             field:
               type: text
-              required: true
-              validate:
-                - required
-          -
-            handle: year
+              display: "Event Name"
+              instructions: "e.g. IWSP 7 — 2015"
+              validate: required
+          - handle: year
+            field:
+              type: integer
+              display: "Year"
+              instructions: "Used for ordering."
+          - handle: location
             field:
               type: text
-              display: Year
-          -
-            handle: location
+              display: "Location"
+              instructions: "e.g. Melbourne, Australia"
+          - handle: event_url
             field:
               type: text
-              display: Location
-          -
-            handle: event_url
-            field:
-              type: text
-              display: 'Event URL'
-          -
-            handle: ownership_type
-            field:
-              options:
-                -
-                  key: AER-Owned
-                  value: null
-                -
-                  key: 'Not AER-Owned'
-                  value: null
-              type: select
-              display: 'Ownership Type'
-          -
-            handle: disclaimer
-            field:
-              type: toggle
-              display: Disclaimer
-          -
-            handle: description
-            field:
-              type: textarea
-              display: Description
-  sidebar:
-    display: Sidebar
-    sections:
-      -
-        fields:
-          -
-            handle: slug
-            field:
-              type: slug
-              localizable: true
-              validate: 'max:200'
+              display: "Website Link"
+              instructions: "Where the card links to when clicked."

@@ -1,26 +1,29 @@
 title: Main Website
 tabs:
   main:
-    display: Main
+    display: Homepage Content
     sections:
-      - fields:
+      - display: "Our Mission"
+        fields:
           - handle: mission_lead
             field:
               type: textarea
-              display: "Mission — Opening Line"
-              instructions: "Bold intro sentence at the top of the Our Mission section."
+              display: "Opening Line"
+              instructions: "Bold intro sentence in the Our Mission section."
           - handle: mission_body
             field:
               type: textarea
-              display: "Mission — Main Paragraph"
-              instructions: "The main paragraph describing what ICTALS does."
+              display: "Main Paragraph"
+              instructions: "Main paragraph describing what ICTALS does."
           - handle: mission_footer
             field:
               type: textarea
-              display: "Mission — Closing Line"
-              instructions: "Short closing line crediting the Alliance for Epilepsy Research."
+              display: "Closing Line"
+              instructions: "Short closing line, e.g. crediting the Alliance for Epilepsy Research."
+      - display: "Future Events"
+        fields:
           - handle: next_event_blurb
             field:
               type: text
-              display: "Future Events — Announcement Banner"
+              display: "Announcement Banner"
               instructions: "The highlighted line above the event cards, e.g. Next event will be held in Newcastle, UK, in 2027!"

@@ -1,66 +1,42 @@
 title: Event
 tabs:
   main:
-    display: Main
+    display: Event Details
     sections:
-      -
+      - display: "Basic Info"
         fields:
-          -
-            handle: title
+          - handle: title
             field:
               type: text
               display: "Event Name"
               instructions: "e.g. ICTALS 2029"
-          -
-            handle: year
+              validate: required
+          - handle: year
             field:
               type: integer
               display: "Year"
               instructions: "Used for ordering. Higher year appears first."
-          -
-            handle: location
+          - handle: location
             field:
               type: text
               display: "Location"
               instructions: "e.g. Newcastle, United Kingdom"
-          -
-            handle: event_url
+          - handle: event_url
             field:
               type: text
               display: "Website Link"
               instructions: "Where the card links to when clicked."
-          -
-            handle: banner_image
+          - handle: banner_image
             field:
               type: assets
               display: "Banner Image"
-              instructions: "Optional photo shown on the card. Leave empty for no image."
+              instructions: "Photo shown on the event card. Leave empty for no image."
               max_files: 1
               container: assets
-          -
-            handle: legacy_url
-            field:
-              type: text
-              display: 'Legacy URL'
-          -
-            handle: content
-            field:
-              type: textarea
-              display: Description
-          -
-            handle: is_past_event
+      - display: "Status"
+        fields:
+          - handle: is_past_event
             field:
               type: toggle
               display: "Move to Past Events"
-              instructions: "Turn this on when the event has passed — it automatically moves from Future Events to Past Events on the homepage."
-
-  sidebar:
-    display: Sidebar
-    sections:
-      -
-        fields:
-          -
-            handle: slug
-            field:
-              type: slug
-              generate: false
+              instructions: "Turn ON when the event has passed. It will automatically move from Future Events to Past Events on the homepage."
