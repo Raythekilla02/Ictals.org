@@ -266,13 +266,17 @@
 
 <section id="mission">
     <h2>Our Mission</h2>
-    <p class="mission-lead">
-        {{ mission_lead }}
-    </p>
-    <p>
-        {{ mission_body }}
-    </p>
-    <p style="margin-top: 1rem;">This series of conferences is facilitated by the Alliance for Epilepsy Research.</p>
+{{ collection:events blueprint:is="main_website" limit="1" }}
+  <p class="mission-lead">
+    {{ mission_lead }}
+  </p>
+  <p>
+    {{ mission_body }}
+  </p>
+  <p style="margin-top: 1rem;">
+    {{ mission_footer }}
+  </p>
+{{ /collection:events }}
 </section>
 
 <section id="events">
@@ -281,18 +285,23 @@
     <div class="events-subtext">Upcoming ICTALS conferences and related meetings.</div>
 
     <div class="future-events-box">
-        Next event will be held in Newcastle, UK, in 2027!
+{{ collection:events blueprint:is="main_website" limit="1" }}
+  {{ next_event_blurb }}
+{{ /collection:events }}
     </div>
 
     <div class="event-grid">
-        {{ if !is_past_event }}
-        <a class="event-card" href="{{ future_event_url }}" target="_blank">
-            <div class="event-body">
-                <div class="event-year">{{ future_event_title }}</div>
-                <div class="event-location">{{ future_event_location }}</div>
-            </div>
-        </a>
-        {{ /if }}
+{{ collection:events is_past_event:is="false" sort="year:asc" }}
+  <a class="event-card" href="{{ event_url ?? '#' }}" target="_blank">
+    {{ if banner_image }}
+      <img src="{{ banner_image }}" class="event-thumb">
+    {{ /if }}
+    <div class="event-body">
+      <div class="event-year">{{ title }}</div>
+      <div class="event-location">{{ location }}</div>
+    </div>
+  </a>
+{{ /collection:events }}
     </div>
 
     <div style="margin-top: 40px;"></div>
@@ -302,14 +311,17 @@
 
     <div class="event-grid">
 
-        {{ if is_past_event }}
-        <a class="event-card" href="{{ future_event_url }}" target="_blank">
-            <div class="event-body">
-                <div class="event-year">{{ future_event_title }}</div>
-                <div class="event-location">{{ future_event_location }}</div>
-            </div>
-        </a>
-        {{ /if }}
+{{ collection:events is_past_event:is="true" sort="year:desc" }}
+  <a class="event-card" href="{{ event_url ?? '#' }}" target="_blank">
+    {{ if banner_image }}
+      <img src="{{ banner_image }}" class="event-thumb">
+    {{ /if }}
+    <div class="event-body">
+      <div class="event-year">{{ title }}</div>
+      <div class="event-location">{{ location }}</div>
+    </div>
+  </a>
+{{ /collection:events }}
 
         <a class="event-card" href="https://2025.ictals.org" target="_blank">
             <img src="/assets/ICTAL 2025-Banner.png" class="event-thumb">

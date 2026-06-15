@@ -8,15 +8,19 @@ tabs:
             field:
               type: textarea
               display: "Mission — Opening Line"
+              instructions: "Bold intro sentence at the top of the Our Mission section."
           - handle: mission_body
             field:
               type: textarea
               display: "Mission — Main Paragraph"
+              instructions: "The main paragraph describing what ICTALS does."
           - handle: mission_footer
             field:
               type: textarea
               display: "Mission — Closing Line"
+              instructions: "Short closing line crediting the Alliance for Epilepsy Research."
           - handle: next_event_blurb
             field:
               type: text
-              display: "Future Events Banner Text"
+              display: "Future Events — Announcement Banner"
+              instructions: "The highlighted line above the event cards, e.g. Next event will be held in Newcastle, UK, in 2027!"

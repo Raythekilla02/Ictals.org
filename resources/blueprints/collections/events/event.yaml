@@ -9,28 +9,34 @@ tabs:
             handle: title
             field:
               type: text
-              required: true
+              display: "Event Name"
+              instructions: "e.g. ICTALS 2029"
           -
             handle: year
             field:
-              type: text
-              display: Year
+              type: integer
+              display: "Year"
+              instructions: "Used for ordering. Higher year appears first."
           -
             handle: location
             field:
               type: text
-              display: Location
+              display: "Location"
+              instructions: "e.g. Newcastle, United Kingdom"
           -
             handle: event_url
             field:
               type: text
-              display: 'Event URL'
+              display: "Website Link"
+              instructions: "Where the card links to when clicked."
           -
             handle: banner_image
             field:
               type: assets
+              display: "Banner Image"
+              instructions: "Optional photo shown on the card. Leave empty for no image."
+              max_files: 1
               container: assets
-              display: 'Banner Image'
           -
             handle: legacy_url
             field:
@@ -45,8 +51,9 @@ tabs:
             handle: is_past_event
             field:
               type: toggle
-              display: 'Move to Past Events'
-              
+              display: "Move to Past Events"
+              instructions: "Turn this on when the event has passed — it automatically moves from Future Events to Past Events on the homepage."
+
   sidebar:
     display: Sidebar
     sections:
