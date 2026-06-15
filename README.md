@@ -1,48 +1,69 @@
-<p align="center">
-<picture>
-    <source srcset="https://statamic.com/assets/branding/squircle/statamic-logo-lime-white.svg" media="(prefers-color-scheme: dark)">
-    <img align="center" width="350" alt="Statamic Logo" src="https://statamic.com/assets/branding/squircle/statamic-logo-lime.svg">
-</picture>
-</p>
+# ICTALS.org
 
-## About Statamic
+Website for the **International Conference for Technology and Analysis of Seizures (ICTALS)** — a recurring academic conference series on seizure prediction and epilepsy research, facilitated by the [Alliance for Epilepsy Research](http://www.epilepsyresearch.org/).
 
-Statamic is the flat-first, Laravel + Git powered CMS designed for building beautiful, easy to manage websites.
+Built with [Statamic](https://statamic.com) (flat-file CMS on Laravel) and deployed at [ictals.org](https://ictals.org).
 
-> [!NOTE]
-> This repository contains the code for a fresh Statamic project that is installed via the Statamic CLI tool.
->
-> The code for the Statamic Composer package itself can be found at the [Statamic core package repository][cms-repo].
+## Requirements
 
+- PHP 8.3+
+- Composer
+- Node.js + npm
 
-## Learning Statamic
+## Setup
 
-Statamic has extensive [documentation][docs]. We dedicate a significant amount of time and energy every day to improving them, so if something is unclear, feel free to open issues for anything you find confusing or incomplete. We are happy to consider anything you feel will make the docs and CMS better.
+```bash
+composer setup
+```
 
-## Support
+This installs PHP and JS dependencies, generates an app key, runs migrations, and builds frontend assets.
 
-We provide official developer support on [Statamic Pro](https://statamic.com/pricing) projects. Community-driven support is available via [GitHub Discussions](https://github.com/statamic/cms/discussions) and in [Discord][discord].
+## Development
 
+```bash
+composer dev
+```
 
-## Contributing
+Starts the Laravel server, queue worker, log tail, and Vite HMR all concurrently.
 
-Thank you for considering contributing to Statamic! We simply ask that you review the [contribution guide][contribution] before you open issues or send pull requests.
+To build frontend assets for production:
 
+```bash
+npm run build
+```
 
-## Code of Conduct
+## Tests
 
-In order to ensure that the Statamic community is welcoming to all and generally a rad place to belong, please review and abide by the [Code of Conduct](https://github.com/statamic/cms/wiki/Code-of-Conduct).
+```bash
+composer test
+```
 
+## Content Management
 
-## Important Links
+Content is managed through the Statamic Control Panel at `/cp`. Editors can update:
 
-- [Statamic Main Site](https://statamic.com)
-- [Statamic Documentation][docs]
-- [Statamic Core Package Repo][cms-repo]
-- [Statamic Migrator](https://github.com/statamic/migrator)
-- [Statamic Discord][discord]
+- **Homepage** — mission statement text and the featured upcoming event (via the `Homepage Content` global)
+- **Events** — add/edit past and future ICTALS conferences via the `Events` collection; toggle `Move to Past Events` to control homepage placement
+- **Archive Events** — older IWSP/ICTALS entries
 
-[docs]: https://statamic.dev/
-[discord]: https://statamic.com/discord
-[contribution]: https://github.com/statamic/cms/blob/master/CONTRIBUTING.md
-[cms-repo]: https://github.com/statamic/cms
+All CP edits are automatically committed to git via Statamic's git automation (`STATAMIC_GIT_ENABLED=true`).
+
+## Key Environment Variables
+
+```env
+APP_URL=https://ictals.org
+STATAMIC_LICENSE_KEY=
+STATAMIC_GIT_ENABLED=true
+STATAMIC_GIT_AUTOMATIC=true
+```
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| CMS | Statamic v6 |
+| Framework | Laravel 13 |
+| Templating | Antlers (`.antlers.html`) |
+| CSS | Tailwind CSS v4 |
+| Build tool | Vite |
+| Database | SQLite (sessions/auth only — content is flat-file) |
