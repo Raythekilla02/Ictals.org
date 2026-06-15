@@ -291,16 +291,16 @@
     </div>
 
     <div class="event-grid">
-{{ collection:events is_past_event:is="false" sort="year:asc" }}
-  <a class="event-card" href="{{ event_url ?? '#' }}" target="_blank">
-    {{ if banner_image }}
-      <img src="{{ banner_image }}" class="event-thumb">
-    {{ /if }}
-    <div class="event-body">
-      <div class="event-year">{{ title }}</div>
-      <div class="event-location">{{ location }}</div>
-    </div>
-  </a>
+{{ collection:events is_past_event:is="false" blueprint:isnt="main_website" sort="year:asc" }}
+    <a class="event-card" href="{{ event_url ?? '#' }}" target="_blank">
+        {{ if banner_image }}
+            <img src="{{ banner_image }}" class="event-thumb">
+        {{ /if }}
+        <div class="event-body">
+            <div class="event-year">{{ title }}</div>
+            <div class="event-location">{{ location }}</div>
+        </div>
+    </a>
 {{ /collection:events }}
     </div>
 
@@ -311,16 +311,16 @@
 
     <div class="event-grid">
 
-{{ collection:events is_past_event:is="true" sort="year:desc" }}
-  <a class="event-card" href="{{ event_url ?? '#' }}" target="_blank">
-    {{ if banner_image }}
-      <img src="{{ banner_image }}" class="event-thumb">
-    {{ /if }}
-    <div class="event-body">
-      <div class="event-year">{{ title }}</div>
-      <div class="event-location">{{ location }}</div>
-    </div>
-  </a>
+{{ collection:events is_past_event:is="true" blueprint:isnt="main_website" sort="year:desc" }}
+    <a class="event-card" href="{{ event_url ?? '#' }}" target="_blank">
+        {{ if banner_image }}
+            <img src="{{ banner_image }}" class="event-thumb">
+        {{ /if }}
+        <div class="event-body">
+            <div class="event-year">{{ title }}</div>
+            <div class="event-location">{{ location }}</div>
+        </div>
+    </a>
 {{ /collection:events }}
 
         <a class="event-card" href="https://2025.ictals.org" target="_blank">
