@@ -186,6 +186,7 @@
         padding: 40px;
         text-align: center;
         color: #222;
+        background: transparent;
     }
     @media (max-width: 768px) {
         header { padding: 16px 20px; }
@@ -241,14 +242,14 @@
     </div>
 
     <div class="event-grid">
-        {{ collection:events is_past_event:is="false" blueprint:isnt="main_website" sort="year:asc" }}
-            <a class="event-card" href="{{ event_url ?? '#' }}" target="_blank">
+        {{ collection:events slug:is="ictals-2027" limit="1" }}
+            <a class="event-card" href="{{ event_url ?? 'https://conferences.ncl.ac.uk/ictals2027/' }}" target="_blank">
                 {{ if banner_image }}
                     <img src="{{ banner_image }}" class="event-thumb">
                 {{ /if }}
                 <div class="event-body">
-                    <div class="event-year">{{ title }}</div>
-                    <div class="event-location">{{ location }}</div>
+                    <div class="event-year">{{ title ?? 'ICTALS 2027' }}</div>
+                    <div class="event-location">{{ location ?? 'Newcastle, United Kingdom' }}</div>
                 </div>
             </a>
         {{ /collection:events }}
@@ -260,17 +261,63 @@
     <div class="events-subtext">Explore previous ICTALS conferences.</div>
 
     <div class="event-grid">
-        {{ collection:events is_past_event:is="true" blueprint:isnt="main_website" sort="year:desc" }}
-            <a class="event-card" href="{{ event_url ?? '#' }}" target="_blank">
+
+        {{ collection:events slug:is="ictals-2025" limit="1" }}
+            <a class="event-card" href="{{ event_url ?? 'https://2025.ictals.org' }}" target="_blank">
                 {{ if banner_image }}
                     <img src="{{ banner_image }}" class="event-thumb">
+                {{ else }}
+                    <img src="/assets/ICTAL 2025-Banner.png" class="event-thumb">
                 {{ /if }}
                 <div class="event-body">
-                    <div class="event-year">{{ title }}</div>
-                    <div class="event-location">{{ location }}</div>
+                    <div class="event-year">{{ title ?? 'ICTALS 2025' }}</div>
+                    <div class="event-location">{{ location ?? 'Montréal, Canada' }}</div>
                 </div>
             </a>
         {{ /collection:events }}
+
+        {{ collection:events slug:is="ictals-2022" limit="1" }}
+            <a class="event-card" href="{{ event_url ?? 'https://2022.ictals.org' }}" target="_blank">
+                {{ if banner_image }}
+                    <img src="{{ banner_image }}" class="event-thumb">
+                {{ else }}
+                    <img src="/assets/ICTAL 2022-Banner.png" class="event-thumb">
+                {{ /if }}
+                <div class="event-body">
+                    <div class="event-year">{{ title ?? 'ICTALS 2022' }}</div>
+                    <div class="event-location">{{ location ?? 'Bern, Switzerland' }}</div>
+                </div>
+            </a>
+        {{ /collection:events }}
+
+        {{ collection:events slug:is="ictals-2019" limit="1" }}
+            <a class="event-card" href="{{ event_url ?? 'https://www.exeter.ac.uk/events/details/index.php?event=9454' }}" target="_blank">
+                {{ if banner_image }}
+                    <img src="{{ banner_image }}" class="event-thumb">
+                {{ else }}
+                    <img src="/assets/ICTAL 2019-Banner.png" class="event-thumb">
+                {{ /if }}
+                <div class="event-body">
+                    <div class="event-year">{{ title ?? 'ICTALS 2019' }}</div>
+                    <div class="event-location">{{ location ?? 'Exeter, United Kingdom' }}</div>
+                </div>
+            </a>
+        {{ /collection:events }}
+
+        {{ collection:events slug:is="ictals-2017" limit="1" }}
+            <a class="event-card" href="{{ event_url ?? 'https://iwsp8.umn.edu/' }}" target="_blank">
+                {{ if banner_image }}
+                    <img src="{{ banner_image }}" class="event-thumb">
+                {{ else }}
+                    <img src="/assets/ICTAL 2017-Banner.png" class="event-thumb">
+                {{ /if }}
+                <div class="event-body">
+                    <div class="event-year">{{ title ?? 'ICTALS 2017' }}</div>
+                    <div class="event-location">{{ location ?? 'Minneapolis, United States' }}</div>
+                </div>
+            </a>
+        {{ /collection:events }}
+
     </div>
 
     <button id="toggle-all" class="toggle-btn">More Past Events ↓</button>
