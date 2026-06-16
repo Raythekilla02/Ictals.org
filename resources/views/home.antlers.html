@@ -242,14 +242,14 @@
     </div>
 
     <div class="event-grid">
-        {{ collection:events slug:is="ictals-2027" limit="1" }}
-            <a class="event-card" href="{{ event_url ?? 'https://conferences.ncl.ac.uk/ictals2027/' }}" target="_blank">
-                {{ if banner_image }}
-                    <img src="{{ banner_image }}" class="event-thumb">
+        {{ collection:events blueprint:is="main_website" limit="1" }}
+            <a class="event-card" href="{{ event_2027_url ?? 'https://conferences.ncl.ac.uk/ictals2027/' }}" target="_blank">
+                {{ if event_2027_banner }}
+                    <img src="{{ event_2027_banner }}" class="event-thumb">
                 {{ /if }}
                 <div class="event-body">
-                    <div class="event-year">{{ title ?? 'ICTALS 2027' }}</div>
-                    <div class="event-location">{{ location ?? 'Newcastle, United Kingdom' }}</div>
+                    <div class="event-year">{{ event_2027_title ?? 'ICTALS 2027' }}</div>
+                    <div class="event-location">{{ event_2027_location ?? 'Newcastle, United Kingdom' }}</div>
                 </div>
             </a>
         {{ /collection:events }}
@@ -262,58 +262,33 @@
 
     <div class="event-grid">
 
-        {{ collection:events slug:is="ictals-2025" limit="1" }}
-            <a class="event-card" href="{{ event_url ?? 'https://2025.ictals.org' }}" target="_blank">
-                {{ if banner_image }}
-                    <img src="{{ banner_image }}" class="event-thumb">
-                {{ else }}
-                    <img src="/assets/ICTAL 2025-Banner.png" class="event-thumb">
-                {{ /if }}
+        {{ collection:events blueprint:is="main_website" limit="1" }}
+            <a class="event-card" href="{{ event_2025_url ?? 'https://2025.ictals.org' }}" target="_blank">
+                <img src="/assets/ICTAL 2025-Banner.png" class="event-thumb">
                 <div class="event-body">
-                    <div class="event-year">{{ title ?? 'ICTALS 2025' }}</div>
-                    <div class="event-location">{{ location ?? 'Montréal, Canada' }}</div>
+                    <div class="event-year">{{ event_2025_title ?? 'ICTALS 2025' }}</div>
+                    <div class="event-location">{{ event_2025_location ?? 'Montréal, Canada' }}</div>
                 </div>
             </a>
-        {{ /collection:events }}
-
-        {{ collection:events slug:is="ictals-2022" limit="1" }}
-            <a class="event-card" href="{{ event_url ?? 'https://2022.ictals.org' }}" target="_blank">
-                {{ if banner_image }}
-                    <img src="{{ banner_image }}" class="event-thumb">
-                {{ else }}
-                    <img src="/assets/ICTAL 2022-Banner.png" class="event-thumb">
-                {{ /if }}
+            <a class="event-card" href="{{ event_2022_url ?? 'https://2022.ictals.org' }}" target="_blank">
+                <img src="/assets/ICTAL 2022-Banner.png" class="event-thumb">
                 <div class="event-body">
-                    <div class="event-year">{{ title ?? 'ICTALS 2022' }}</div>
-                    <div class="event-location">{{ location ?? 'Bern, Switzerland' }}</div>
+                    <div class="event-year">{{ event_2022_title ?? 'ICTALS 2022' }}</div>
+                    <div class="event-location">{{ event_2022_location ?? 'Bern, Switzerland' }}</div>
                 </div>
             </a>
-        {{ /collection:events }}
-
-        {{ collection:events slug:is="ictals-2019" limit="1" }}
-            <a class="event-card" href="{{ event_url ?? 'https://www.exeter.ac.uk/events/details/index.php?event=9454' }}" target="_blank">
-                {{ if banner_image }}
-                    <img src="{{ banner_image }}" class="event-thumb">
-                {{ else }}
-                    <img src="/assets/ICTAL 2019-Banner.png" class="event-thumb">
-                {{ /if }}
+            <a class="event-card" href="{{ event_2019_url ?? 'https://www.exeter.ac.uk/events/details/index.php?event=9454' }}" target="_blank">
+                <img src="/assets/ICTAL 2019-Banner.png" class="event-thumb">
                 <div class="event-body">
-                    <div class="event-year">{{ title ?? 'ICTALS 2019' }}</div>
-                    <div class="event-location">{{ location ?? 'Exeter, United Kingdom' }}</div>
+                    <div class="event-year">{{ event_2019_title ?? 'ICTALS 2019' }}</div>
+                    <div class="event-location">{{ event_2019_location ?? 'Exeter, United Kingdom' }}</div>
                 </div>
             </a>
-        {{ /collection:events }}
-
-        {{ collection:events slug:is="ictals-2017" limit="1" }}
-            <a class="event-card" href="{{ event_url ?? 'https://iwsp8.umn.edu/' }}" target="_blank">
-                {{ if banner_image }}
-                    <img src="{{ banner_image }}" class="event-thumb">
-                {{ else }}
-                    <img src="/assets/ICTAL 2017-Banner.png" class="event-thumb">
-                {{ /if }}
+            <a class="event-card" href="{{ event_2017_url ?? 'https://iwsp8.umn.edu/' }}" target="_blank">
+                <img src="/assets/ICTAL 2017-Banner.png" class="event-thumb">
                 <div class="event-body">
-                    <div class="event-year">{{ title ?? 'ICTALS 2017' }}</div>
-                    <div class="event-location">{{ location ?? 'Minneapolis, United States' }}</div>
+                    <div class="event-year">{{ event_2017_title ?? 'ICTALS 2017' }}</div>
+                    <div class="event-location">{{ event_2017_location ?? 'Minneapolis, United States' }}</div>
                 </div>
             </a>
         {{ /collection:events }}
@@ -348,7 +323,9 @@ document.getElementById('toggle-all').onclick = () => {
     <div style="text-align: center; padding: 20px 0;">
         <p style="font-size: 16px; color: #555;">
             For more information or inquiries, please contact us at
-            <a href="mailto:organizers@ictals.org" style="color: #005bbb;">organizers@ictals.org</a>.
+            {{ collection:events blueprint:is="main_website" limit="1" }}
+<a href="mailto:{{ contact_email ?? 'organizers@ictals.org' }}" style="color: #005bbb;">{{ contact_email ?? 'organizers@ictals.org' }}</a>
+{{ /collection:events }}.
         </p>
     </div>
 </section>
@@ -356,5 +333,7 @@ document.getElementById('toggle-all').onclick = () => {
 </main>
 
 <footer>
-    © 2026 ICTALS — All Rights Reserved
+    {{ collection:events blueprint:is="main_website" limit="1" }}
+{{ copyright_text ?? '© 2026 ICTALS — All Rights Reserved' }}
+{{ /collection:events }}
 </footer>

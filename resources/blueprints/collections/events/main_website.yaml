@@ -3,27 +3,114 @@ tabs:
   main:
     display: Homepage Content
     sections:
-      - display: "Our Mission"
+      - display: "Mission Section"
         fields:
           - handle: mission_lead
             field:
               type: textarea
-              display: "Opening Line"
+              display: "Mission — Opening Line"
               instructions: "Bold intro sentence in the Our Mission section."
           - handle: mission_body
             field:
               type: textarea
-              display: "Main Paragraph"
+              display: "Mission — Main Paragraph"
               instructions: "Main paragraph describing what ICTALS does."
           - handle: mission_footer
             field:
               type: textarea
-              display: "Closing Line"
-              instructions: "Short closing line, e.g. crediting the Alliance for Epilepsy Research."
+              display: "Mission — Closing Line"
+              instructions: "Short closing line crediting the Alliance for Epilepsy Research."
+
       - display: "Future Events"
         fields:
           - handle: next_event_blurb
             field:
               type: text
               display: "Announcement Banner"
-              instructions: "The highlighted line above the event cards, e.g. Next event will be held in Newcastle, UK, in 2027!"
+              instructions: "The highlighted line above the event cards."
+          - handle: event_2027_title
+            field:
+              type: text
+              display: "2027 Event — Name"
+              instructions: "e.g. ICTALS 2027"
+          - handle: event_2027_location
+            field:
+              type: text
+              display: "2027 Event — Location"
+              instructions: "e.g. Newcastle, United Kingdom"
+          - handle: event_2027_url
+            field:
+              type: text
+              display: "2027 Event — Website Link"
+              instructions: "Link for the 2027 event card."
+          - handle: event_2027_banner
+            field:
+              type: assets
+              display: "2027 Event — Banner Image"
+              instructions: "Photo shown on the 2027 event card."
+              max_files: 1
+              container: assets
+
+      - display: "Past Events"
+        fields:
+          - handle: event_2025_title
+            field:
+              type: text
+              display: "2025 Event — Name"
+          - handle: event_2025_location
+            field:
+              type: text
+              display: "2025 Event — Location"
+          - handle: event_2025_url
+            field:
+              type: text
+              display: "2025 Event — Website Link"
+          - handle: event_2022_title
+            field:
+              type: text
+              display: "2022 Event — Name"
+          - handle: event_2022_location
+            field:
+              type: text
+              display: "2022 Event — Location"
+          - handle: event_2022_url
+            field:
+              type: text
+              display: "2022 Event — Website Link"
+          - handle: event_2019_title
+            field:
+              type: text
+              display: "2019 Event — Name"
+          - handle: event_2019_location
+            field:
+              type: text
+              display: "2019 Event — Location"
+          - handle: event_2019_url
+            field:
+              type: text
+              display: "2019 Event — Website Link"
+          - handle: event_2017_title
+            field:
+              type: text
+              display: "2017 Event — Name"
+          - handle: event_2017_location
+            field:
+              type: text
+              display: "2017 Event — Location"
+          - handle: event_2017_url
+            field:
+              type: text
+              display: "2017 Event — Website Link"
+
+      - display: "Contact & Footer"
+        fields:
+          - handle: contact_email
+            field:
+              type: text
+              display: "Contact Email"
+              instructions: "Email shown in the contact section."
+          - handle: copyright_text
+            field:
+              type: text
+              display: "Copyright Text"
+              instructions: "Footer copyright line."
