@@ -50,6 +50,33 @@ tabs:
               instructions: "Photo shown on the 2027 event card."
               max_files: 1
               container: assets
+          - handle: future_events
+            field:
+              type: grid
+              display: "Additional Future Events"
+              instructions: "Add new future events here. Each one will appear as a card on the website next to ICTALS 2027."
+              add_row: "Add Future Event"
+              fields:
+                - handle: event_title
+                  field:
+                    type: text
+                    display: "Event Name"
+                    instructions: "e.g. ICTALS 2029"
+                - handle: event_location
+                  field:
+                    type: text
+                    display: "Location"
+                    instructions: "e.g. Lisbon, Portugal"
+                - handle: event_url
+                  field:
+                    type: text
+                    display: "Website Link"
+                - handle: event_banner
+                  field:
+                    type: assets
+                    display: "Banner Image"
+                    max_files: 1
+                    container: assets
 
       - display: "Past Events"
         fields:

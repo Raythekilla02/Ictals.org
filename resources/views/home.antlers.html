@@ -253,6 +253,19 @@
                 </div>
             </a>
         {{ /collection:events }}
+        {{ collection:events blueprint:is="main_website" limit="1" }}
+            {{ future_events }}
+                <a class="event-card" href="{{ event_url ?? '#' }}" target="_blank">
+                    {{ if event_banner }}
+                        <img src="{{ event_banner }}" class="event-thumb">
+                    {{ /if }}
+                    <div class="event-body">
+                        <div class="event-year">{{ event_title }}</div>
+                        <div class="event-location">{{ event_location }}</div>
+                    </div>
+                </a>
+            {{ /future_events }}
+        {{ /collection:events }}
     </div>
 
     <div style="margin-top: 40px;"></div>
