@@ -242,14 +242,14 @@
     </div>
 
     <div class="event-grid">
-        {{ collection:events blueprint:is="main_website" limit="1" }}
-            <a class="event-card" href="{{ event_2027_url ?? 'https://conferences.ncl.ac.uk/ictals2027/' }}" target="_blank">
-                {{ if event_2027_banner }}
-                    <img src="{{ event_2027_banner }}" class="event-thumb">
+        {{ collection:events blueprint:is="event" is_past_event:is="false" sort="year:asc" }}
+            <a class="event-card" href="{{ event_url ?? '#' }}" target="_blank">
+                {{ if banner_image }}
+                    <img src="{{ banner_image }}" class="event-thumb">
                 {{ /if }}
                 <div class="event-body">
-                    <div class="event-year">{{ event_2027_title ?? 'ICTALS 2027' }}</div>
-                    <div class="event-location">{{ event_2027_location ?? 'Newcastle, United Kingdom' }}</div>
+                    <div class="event-year">{{ title }}</div>
+                    <div class="event-location">{{ location }}</div>
                 </div>
             </a>
         {{ /collection:events }}
