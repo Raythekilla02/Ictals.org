@@ -50,6 +50,24 @@ tabs:
               instructions: "Photo shown on the 2027 event card."
               max_files: 1
               container: assets
+          - handle: event_2027_files
+            field:
+              type: grid
+              display: "2027 Event — Website Files"
+              instructions: "Add a row for each file that belongs to this event's website — e.g. index.html, contact-us.html, gallery.html, location.html, robots.txt, sitemap.xml. Click Add File to add more."
+              add_row: "Add File"
+              fields:
+                - handle: file_label
+                  field:
+                    type: text
+                    display: "File Name"
+                    instructions: "e.g. index.html, contact-us.html, gallery.html, location.html"
+                - handle: file
+                  field:
+                    type: assets
+                    display: "Select File"
+                    container: assets
+                    max_files: 1
           - handle: future_events
             field:
               type: grid
@@ -77,6 +95,24 @@ tabs:
                     display: "Banner Image"
                     max_files: 1
                     container: assets
+                - handle: event_files
+                  field:
+                    type: grid
+                    display: "Event Website Files"
+                    instructions: "Add a row for each file that belongs to this event's website — e.g. index.html, contact-us.html, gallery.html, location.html, robots.txt, sitemap.xml."
+                    add_row: "Add File"
+                    fields:
+                      - handle: file_label
+                        field:
+                          type: text
+                          display: "File Name"
+                          instructions: "e.g. index.html, contact-us.html, gallery.html, location.html"
+                      - handle: file
+                        field:
+                          type: assets
+                          display: "Select File"
+                          container: assets
+                          max_files: 1
 
       - display: "Past Events"
         fields:
